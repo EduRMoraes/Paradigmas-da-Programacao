@@ -1,0 +1,32 @@
+brutos = [10.0, 20.0, 50.0]
+normalizados = []
+fator = 0.5
+maximo = max(brutos)
+
+for p in brutos:
+    base = p / maximo
+    normalizados.append(base + fator)
+
+print(f"IA Dados: {normalizados}")
+
+def calcular_normalizacao(valor, maximo, fator):
+    base = valor / maximo
+    return base + fator
+
+def atualizar_normalizados(lista_brutos, lista_normalizados, fator):
+    maximo = max(lista_brutos)
+
+    for p in lista_brutos:
+        resultado = calcular_normalizacao(p, maximo, fator)
+        lista_normalizados.append(resultado)
+
+def main():
+    brutos = [10.0, 20.0, 50.0]
+    normalizados = []
+    fator = 0.5
+
+    atualizar_normalizados(brutos, normalizados, fator)
+
+    print(f"IA Dados: {normalizados}")
+
+main()
